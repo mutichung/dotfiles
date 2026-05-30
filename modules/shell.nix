@@ -27,4 +27,16 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.bat = {
+    enable = true;
+    config.theme = "OneHalfDark";
+  };
+
+  programs.tmux = {
+    enable = true;
+    mouse = true;
+    keyMode = "vi";
+    historyLimit = 5000;
+  };
 }

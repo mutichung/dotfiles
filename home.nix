@@ -11,9 +11,7 @@
     ./modules/shell.nix
   ];
   home.packages = with pkgs; [
-    bat
     fzf
-    tmux
   ];
 
   programs.home-manager.enable = true;
