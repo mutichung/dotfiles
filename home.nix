@@ -6,10 +6,15 @@
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
     bat
+    cargo
     fzf
+    gcc
     git
+    gnumake
+    luarocks
     neovim
     tmux
+    unzip
     zoxide
   ];
 
@@ -26,8 +31,8 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      add_newline = false;
-      line_break.disabled = true;
+      add_newline = true;
+      line_break.disabled = false;
     };
   };
 
@@ -41,5 +46,13 @@
   };
 
   programs.home-manager.enable = true;
+
+	xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
+	  owner = "LazyVim";
+    repo = "starter";
+    rev = "main";
+    sha256 = "sha256-QrpnlDD4r1X4C8PqBhQ+S3ar5C+qDrU1Jm/lPqyMIFM=";
+  };
+
 }
 

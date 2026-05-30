@@ -16,9 +16,15 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.zsh.enable = true;
-  programs.git.enable = true;
+
+  users.users.nixos = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "networkmaanager" "wheel" ];
+  };
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
