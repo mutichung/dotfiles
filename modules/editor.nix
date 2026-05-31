@@ -6,9 +6,15 @@
     gcc
     gnumake
     luarocks
-    neovim
     unzip
   ];
+
+  programs.neovim = {
+    enable = true;
+    extraLuaConfig = ''
+      vim.opt.termguicolors = true
+    '';
+  };
 
 	xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
 	  owner = "LazyVim";

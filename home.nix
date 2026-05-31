@@ -12,6 +12,7 @@
   ];
   home.packages = with pkgs; [
     fzf
+    devenv
   ];
 
   programs.home-manager.enable = true;

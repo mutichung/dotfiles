@@ -38,5 +38,9 @@
     mouse = true;
     keyMode = "vi";
     historyLimit = 5000;
+    terminal = "xterm-256color";
+    extraConfig = ''
+      set -as terminal-features ",xterm-256color:RGB"
+    '';
   };
 }
